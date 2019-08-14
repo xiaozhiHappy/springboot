@@ -1,0 +1,25 @@
+## 数据源配置
+spring: 
+  datasource: 
+    url: jdbc:mysql://127.0.0.1:3306/datav_xlw?useUnicode=true&serverTimezone=UTC&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+## redis配置
+  redis:
+    host: 127.0.0.1
+    password: 123456
+    port: 6379
+    jedis: 
+      pool: 
+        max-idle: 100 
+        min-idle: 1
+        max-active: 1000
+        max-wait: -1
+##日志配置
+logging:
+  level:
+    root: info
+  #config: classpath:logback-spring.xml
+  #path: path和file同时配置，日志文件会生成在项目根目录下
+  file: E:/uploadFile/test.log

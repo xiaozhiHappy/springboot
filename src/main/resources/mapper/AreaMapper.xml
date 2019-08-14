@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.spring.springboot.dao.AreaDao">
+	<resultMap id="BaseResultMap" type="org.spring.springboot.domain.Area">
+		<result column="area_code" property="areaCode" />
+		<result column="area_name" property="areaName" />
+		<result column="level" property="level" />
+		<result column="parent_code" property="parentCode" />
+		<result column="lng" property="lng" />
+		<result column="lat" property="lat" />
+	</resultMap>
+	<parameterMap id="area" type="org.spring.springboot.domain.Area"/>
+	<sql id="Base_Sql">
+		area_code,area_name,level,parent_code,lng,lat
+	</sql>
+	<select id="findAreaNameByCode" resultMap="BaseResultMap" parameterType="java.lang.String">
+		select
+		<include refid="Base_Sql" />
+		from tb_area
+		where area_code = #{areaCode}
+	</select>
+</mapper>

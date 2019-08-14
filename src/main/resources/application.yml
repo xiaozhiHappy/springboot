@@ -1,0 +1,18 @@
+## Tomcat
+server:
+  port: 8081
+  servlet: 
+    context-path: /test
+app:
+  id: apolloapp
+apollo: 
+  meta: http://127.0.0.1:8080
+spring: 
+  profiles:
+    active: uat
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true 
+  mapper-locations: classpath:/mapper/*.xml 
+  type-aliases-package: org.spring.springboot.domain
+  
