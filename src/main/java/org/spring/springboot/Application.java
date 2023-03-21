@@ -41,6 +41,7 @@ public class Application extends SpringBootServletInitializer{
                 "----------------------------------------------------------",
           env.getProperty("spring.profiles.active"),ip,
           env.getProperty("server.port"));
+		System.out.println("分支合并");
 		logger.info("程序启动完成。。。。。。");
     }
 }
